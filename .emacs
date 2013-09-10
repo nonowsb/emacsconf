@@ -4,8 +4,13 @@
 ;; debug if problemes
 ;(setq-default debug-on-error t)
 
-(defvar emacsrootpath "~/emacsconfig/")
 ;;(defvar emacsrootpath "~/")
+(defvar emacsrootpath "~/emacsconfig/")
+
+;; blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
+(defvar themecolor "blueor")
+
+
 
 ;; hide that tucking foolbar
 (tool-bar-mode -1)
@@ -35,6 +40,8 @@
 
 (if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
     (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
+
+
 
 ;;(if (file-exists-p "~/.emacs.d/arnaud/arnaud.el")
 ;;    (load-file "~/.emacs.d/arnaud/arnaud.el"))
@@ -245,14 +252,9 @@
 
 
 		;;(load-file "~/themes/emacs/midnightdark")
-		(load-file "~/themes/emacs/blueor")
-		;;(load-file "~/themes/emacs/whitest_2")
-		;;(load-file "~/themes/emacs/whitest")
-		;;(load-file "~/themes/emacs/storm")
-		;;(load-file "~/themes/emacs/matrix")
-		;;(load-file "~/themes/emacs/desert")
-		;;(load-file "~/themes/emacs/grayze")
-
+;;Themes names:
+;; blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
+(load-file (concat emacsrootpath (concat "colortheme/terminal/" themecolor)))
 
 ;;KEYS
 ;;(if (file-exists-p "~/.emacs-keys")
@@ -326,18 +328,6 @@
 ;; qu'invoquée explicitement, la commande « hs-show-all » fonctionne
 ;; parfaitement.
 (global-set-key [(meta f12)] 'hs-show-all)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
