@@ -1,0 +1,188 @@
+;; ---------------------------------------------------------------------
+;; EMACS COLORS & FONTS
+;; ---------------------------------------------------------------------
+;; debug if problemes
+;(setq-default debug-on-error t)
+
+;; hide that tucking foolbar
+
+
+;; colors
+;; ---------------------------------------------------------------------
+;;(set-background-color "white")
+;;(set-foreground-color "black")
+;;(set-cursor-color "orange")
+
+
+
+(require 'color-theme)
+(setq color-theme-is-global t)
+(color-theme-charcoal-black)
+
+
+
+(set-cursor-color "orange")
+
+
+;;*---------------------------------------------------------------------------------------
+
+
+ (custom-set-faces
+;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :family "adobe-courier"))))
+;;  '(background "blue")
+;;  '(border ((t (:background "black"))))
+;;  '(custom-button ((((type x w32 mac) (class color)) (:background "lightgrey" :foreground "black" :box (:line-width 2 :style released-button) :family "helv"))))
+;;  '(custom-button-pressed ((((type x w32 mac) (class color)) (:background "lightgrey" :foreground "black" :box (:line-width 2 :style pressed-button)))))
+;;  '(custom-comment ((((class grayscale color) (background light)) (:inherit variable-pitch :background "gray85"))))
+;;  '(custom-comment-tag ((((class color) (background light)) (:foreground "blue4"))))
+;;  '(custom-documentation ((t nil)))
+;;  '(custom-face-tag ((t (:weight bold :height 1.2))))
+;;  '(custom-group-tag-1 ((t (:foreground "red" :weight bold :height 1.2))))
+;;  '(custom-state ((((class color) (background light)) (:foreground "dark green"))))
+;;  '(custom-variable-button ((t (:underline t :weight bold))))
+;  '(ecb-default-general-face ((((class color) (background light)) (:inherit variable-pitch))))
+
+  '(ecb-default-general-face ((t ( :foreground "white"))))
+  '(ecb-default-highlight-face ((t (:background "darkorange2" :foreground "white"))))
+  '(ecb-directory-face ((((class color) ) (:inherit ecb-default-highlight-face))))
+  '(ecb-history-face ((((class color) ) (:inherit ecb-default-highlight-face))))
+  '(ecb-history-general-face ((((class color) ) (:inherit ecb-default-general-face))))
+  '(ecb-method-face ((((class color) ) (:inherit ecb-default-highlight-face))))
+  '(ecb-methods-general-face ((((class color) ) (:inherit ecb-default-general-face))))
+  '(ecb-source-face ((((class color) ) (:inherit ecb-default-highlight-face))))
+  '(ecb-sources-general-face ((((class color) ) (:inherit ecb-default-general-face))))
+  '(ecb-tag-header-face ((((class color) ) (:background "dim grey" :foreground "orange"))))
+  
+;;  '(font-lock-builtin-face ((((class color) (background dark)) (:foreground "Turquoise"))))
+
+;;   //comments
+;;  '(font-lock-comment-face ((t (:foreground "light goldenrod" ))))
+
+  '(font-lock-constant-face ((((class color) (background dark)) (:foreground "salmon"))))
+
+;;  '(font-lock-doc-string-face ((t (:foreground "green1"))))
+
+;;  functions
+;; '(font-lock-function-name-face ((t (:foreground "Dark Orange" :weight bold))))
+
+;;   keyword for-if
+;;  '(font-lock-keyword-face ((t (:foreground "blue"))))
+
+;;  '(font-lock-preprocessor-face ((t (:italic nil :foreground "CornFlowerBlue"))))
+;;  '(font-lock-reference-face ((t (:foreground "DodgerBlue"))))
+
+;; "chaine de caracteres"
+  '(font-lock-string-face ((t (:foreground "spring green"))))
+;;  '(font-lock-type-face ((t (:foreground "Coral" :weight bold))))
+;;  '(font-lock-variable-name-face ((t (:foreground "DarkGreen"))))
+;;  '(font-lock-warning-face ((t (:foreground "salmon"))))
+;;  '(fringe ((((class color) (background light)) (:background "grey95"))))
+;;  '(highlight ((t (:background "CornflowerBlue"))))
+
+
+  '(html-tag-face ((t (:foreground "blue"))))
+  '(list-mode-item-selected ((t (:background "gold"))))
+;;  '(makefile-space-face ((t (:background "wheat"))))
+  '(menu ((t (:inherit fixed-pitch :background "gray" :foreground "white" :weight bold))))
+  '(mode-line ((t (:background "light grey"))))
+  '(paren-match ((t (:background "darkseagreen4"))))
+  '(region ((t (:background "Light Grey"))))
+
+  '(scroll-bar ((t (:background "gray" :foreground "white"))))
+  '(show-paren-match ((t (:foreground "black" :background "wheat"))))
+  '(show-paren-mismatch ((((class color)) (:foreground "white" :background "red"))))
+  '(speedbar-button-face ((((class color) (background dark)) (:foreground "green4"))))
+  '(speedbar-directory-face ((((class color) (background dark)) (:foreground "khaki"))))
+  '(speedbar-file-face ((((class color) (background dark)) (:foreground "cyan"))))
+  '(speedbar-tag-face ((((class color) (background dark)) (:foreground "Springgreen"))))
+  '(tool-bar ((((type x w32 mac) (class color)) (:inherit mode-line :background "grey75" :foreground "black" :box (:line-width 1 :style released-button)))))
+  '(vhdl-font-lock-prompt-face ((((class color) (background dark)) (:bold t :foreground "wheat"))))
+  '(vhdl-speedbar-architecture-selected-face ((((class color) (background dark)) (:underline t :foreground "Red"))))
+  '(vhdl-speedbar-entity-face ((((class color) (background dark)) (:foreground "darkGreen"))))
+  '(vhdl-speedbar-entity-selected-face ((((class color) (background dark)) (:underline t :foreground "darkGreen"))))
+  '(vhdl-speedbar-package-face ((((class color) (background dark)) (:foreground "black"))))
+  '(vhdl-speedbar-package-selected-face ((((class color) (background dark)) (:underline t :foreground "black"))))
+  '(widget-button ((t nil)))
+  '(widget-button-pressed ((((class color)) nil)))
+  '(widget-documentation ((((class color) (background light)) nil)))
+  '(widget-field ((((class grayscale color) (background light)) (:background "DarkBlue"))))
+  '(widget-inactive ((((class grayscale color) (background light)) (:foreground "dim gray"))))
+  '(widget-single-line-field ((t (:box (:line-width 2 :color "grey75F" :style pressed-button))))))
+
+
+
+
+
+
+
+
+
+
+
+;;---------------------------------------------COMMENT !!--------------------------------------------
+
+;; (custom-set-faces
+;;  '(default ((t (:stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :family "adobe-courier"))))
+;;  '(background "blue")
+;;  '(border ((t (:background "black"))))
+;;  '(custom-button ((((type x w32 mac) (class color)) (:background "lightgrey" :foreground "black" :box (:line-width 2 :style released-button) :family "helv"))))
+;;  '(custom-button-pressed ((((type x w32 mac) (class color)) (:background "lightgrey" :foreground "black" :box (:line-width 2 :style pressed-button)))))
+;;  '(custom-comment ((((class grayscale color) (background light)) (:inherit variable-pitch :background "gray85"))))
+;;  '(custom-comment-tag ((((class color) (background light)) (:foreground "blue4"))))
+;;  '(custom-documentation ((t nil)))
+;;  '(custom-face-tag ((t (:weight bold :height 1.2))))
+;;  '(custom-group-tag-1 ((t (:foreground "red" :weight bold :height 1.2))))
+;;  '(custom-state ((((class color) (background light)) (:foreground "dark green"))))
+;;  '(custom-variable-button ((t (:underline t :weight bold))))
+;;;  '(ecb-default-general-face ((((class color) (background light)) (:inherit variable-pitch))))
+;;  '(ecb-default-general-face ((t (:background "white" :foreground "black"))))
+;;  '(ecb-default-highlight-face ((t (:background "darkorange2" :foreground "white"))))
+;;  '(ecb-directory-face ((((class color) (background light)) (:inherit ecb-default-highlight-face))))
+;;  '(ecb-history-face ((((class color) (background light)) (:inherit ecb-default-highlight-face))))
+;;  '(ecb-history-general-face ((((class color) (background light)) (:inherit ecb-default-general-face))))
+;;  '(ecb-method-face ((((class color) (background light)) (:inherit ecb-default-highlight-face))))
+;;  '(ecb-methods-general-face ((((class color) (background light)) (:inherit ecb-default-general-face))))
+;;  '(ecb-source-face ((((class color) (background light)) (:inherit ecb-default-highlight-face))))
+;;  '(ecb-sources-general-face ((((class color) (background light)) (:inherit ecb-default-general-face))))
+;;  '(ecb-tag-header-face ((((class color) (background dark)) (:background "dim grey" :foreground "orange"))))
+;;  '(font-lock-builtin-face ((((class color) (background dark)) (:foreground "Turquoise"))))
+;;  '(font-lock-comment-face ((t (:foreground "SeaGreen4" :weight bold))))
+;;  '(font-lock-constant-face ((((class color) (background dark)) (:foreground "salmon"))))
+;;  '(font-lock-doc-string-face ((t (:foreground "green2"))))
+;;  '(font-lock-function-name-face ((t (:foreground "Dark Orange" :weight bold))))
+;;  '(font-lock-keyword-face ((t (:foreground "blue"))))
+;;  '(font-lock-preprocessor-face ((t (:italic nil :foreground "CornFlowerBlue"))))
+;;  '(font-lock-reference-face ((t (:foreground "DodgerBlue"))))
+;;  '(font-lock-string-face ((t (:foreground "SaddleBrown"))))
+;;  '(font-lock-type-face ((t (:foreground "Coral" :weight bold))))
+;;  '(font-lock-variable-name-face ((t (:foreground "DarkGreen"))))
+;;  '(font-lock-warning-face ((t (:foreground "salmon"))))
+;;  '(fringe ((((class color) (background light)) (:background "grey95"))))
+;;  '(highlight ((t (:background "CornflowerBlue")))) 
+;;  '(html-tag-face ((t (:foreground "blue"))))
+;;  '(list-mode-item-selected ((t (:background "gold"))))
+;;  '(makefile-space-face ((t (:background "wheat"))))
+;;  '(menu ((t (:inherit fixed-pitch :background "gray" :foreground "white" :weight bold))))
+;;  '(mode-line ((t (:background "light grey"))))
+;;  '(paren-match ((t (:background "darkseagreen4"))))
+;;  '(region ((t (:background "Light Grey"))))
+;;  '(scroll-bar ((t (:background "gray" :foreground "white"))))
+;;  '(show-paren-match ((t (:foreground "black" :background "wheat"))))
+;;  '(show-paren-mismatch ((((class color)) (:foreground "white" :background "red"))))
+;;  '(speedbar-button-face ((((class color) (background dark)) (:foreground "green4"))))
+;;  '(speedbar-directory-face ((((class color) (background dark)) (:foreground "khaki"))))
+;;  '(speedbar-file-face ((((class color) (background dark)) (:foreground "cyan"))))
+;;  '(speedbar-tag-face ((((class color) (background dark)) (:foreground "Springgreen"))))
+;;  '(tool-bar ((((type x w32 mac) (class color)) (:inherit mode-line :background "grey75" :foreground "black" :box (:line-width 1 :style released-button)))))
+;;  '(vhdl-font-lock-prompt-face ((((class color) (background dark)) (:bold t :foreground "wheat"))))
+;;  '(vhdl-speedbar-architecture-selected-face ((((class color) (background dark)) (:underline t :foreground "Red"))))
+;;  '(vhdl-speedbar-entity-face ((((class color) (background dark)) (:foreground "darkGreen"))))
+;;  '(vhdl-speedbar-entity-selected-face ((((class color) (background dark)) (:underline t :foreground "darkGreen"))))
+;;  '(vhdl-speedbar-package-face ((((class color) (background dark)) (:foreground "black"))))
+;;  '(vhdl-speedbar-package-selected-face ((((class color) (background dark)) (:underline t :foreground "black"))))
+;;  '(widget-button ((t nil)))
+;;  '(widget-button-pressed ((((class color)) nil)))
+;;  '(widget-documentation ((((class color) (background light)) nil)))
+;;  '(widget-field ((((class grayscale color) (background light)) (:background "DarkBlue"))))
+;;  '(widget-inactive ((((class grayscale color) (background light)) (:foreground "dim gray"))))
+;;  '(widget-single-line-field ((t (:box (:line-width 2 :color "grey75F" :style pressed-button))))))
