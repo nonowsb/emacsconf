@@ -47,12 +47,17 @@
 ;;(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode-improved.el"))
 ;;    (load-file (concat emacsrootpath ".emacs.d/php-mode-improved.el")))
 
+
+
 (if (file-exists-p (concat emacsrootpath ".emacs.d/findr.el"))
     (load-file (concat emacsrootpath ".emacs.d/findr.el")))
 
 ;;Autoloader !!
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/"))
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
+
 (require 'auto-complete-config)
+(require 'flymake-php)
 (add-to-list 'ac-dictionary-directories (concat emacsrootpath ".emacs.d//ac-dict"))
 (ac-config-default)
 
