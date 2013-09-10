@@ -41,12 +41,11 @@
 (if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
     (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
 
+(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode.el"))
+    (load-file (concat emacsrootpath ".emacs.d/php-mode.el")))
 
-
-;;(if (file-exists-p "~/.emacs.d/arnaud/arnaud.el")
-;;    (load-file "~/.emacs.d/arnaud/arnaud.el"))
-
-
+;;(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode-improved.el"))
+;;    (load-file (concat emacsrootpath ".emacs.d/php-mode-improved.el")))
 
 (if (file-exists-p (concat emacsrootpath ".emacs.d/findr.el"))
     (load-file (concat emacsrootpath ".emacs.d/findr.el")))
