@@ -4,7 +4,8 @@
 ;; debug if problemes
 ;(setq-default debug-on-error t)
 
-(defvar emacsrootpath "~/emacsconf/")
+(defvar emacsrootpath "~/emacsconfig/")
+;;(defvar emacsrootpath "~/")
 
 ;; hide that tucking foolbar
 (tool-bar-mode -1)
@@ -35,19 +36,24 @@
 (if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
     (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
 
-(if (file-exists-p "~/.emacs.d/findr.el")
-    (load-file "~/.emacs.d/findr.el"))
+;;(if (file-exists-p "~/.emacs.d/arnaud/arnaud.el")
+;;    (load-file "~/.emacs.d/arnaud/arnaud.el"))
+
+
+
+(if (file-exists-p (concat emacsrootpath ".emacs.d/findr.el"))
+    (load-file (concat emacsrootpath ".emacs.d/findr.el")))
 
 ;;Autoloader !!
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/"))
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(add-to-list 'ac-dictionary-directories (concat emacsrootpath ".emacs.d//ac-dict"))
 (ac-config-default)
 
 ;;cedet
-(add-to-list 'load-path "~/.emacs.d/cedet-1.0/eieio")
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/cedet-1.0/eieio"))
 ;;(load-file "~/.emacs.d/cedet-1.0/common/cedet.el")
-(add-to-list 'load-path "~/.emacs.d/geben-0.26")
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/geben-0.26"))
 (require 'geben)
 
 
