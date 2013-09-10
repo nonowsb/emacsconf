@@ -4,6 +4,8 @@
 ;; debug if problemes
 ;(setq-default debug-on-error t)
 
+(defvar emacsrootpath "~/emacsconf/")
+
 ;; hide that tucking foolbar
 (tool-bar-mode -1)
 
@@ -30,8 +32,8 @@
 ;;(if (file-exists-p "~/.emacs.d/arnaud/.emacs-indent")
 ;;    (load-file "~/.emacs.d/arnaud/.emacs-indent"))
 
-(if (file-exists-p "~/.emacs.d/arnaud/arnaud.el")
-    (load-file "~/.emacs.d/arnaud/arnaud.el"))
+(if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
+    (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
 
 (if (file-exists-p "~/.emacs.d/findr.el")
     (load-file "~/.emacs.d/findr.el"))
