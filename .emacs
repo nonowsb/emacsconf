@@ -37,27 +37,33 @@
 ;;INDENT
 ;;(if (file-exists-p "~/.emacs.d/arnaud/.emacs-indent")
 ;;    (load-file "~/.emacs.d/arnaud/.emacs-indent"))
-
-(if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
-    (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
-
-(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode.el"))
-    (load-file (concat emacsrootpath ".emacs.d/php-mode.el")))
-
+;;(if (file-exists-p (concat emacsrootpath ".emacs.d/arnaud/arnaud.el"))
+;;    (load-file (concat emacsrootpath ".emacs.d/arnaud/arnaud.el")))
+;;(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode.el"))
+;;    (load-file (concat emacsrootpath ".emacs.d/php-mode.el")))
 ;;(if (file-exists-p (concat emacsrootpath ".emacs.d/php-mode-improved.el"))
 ;;    (load-file (concat emacsrootpath ".emacs.d/php-mode-improved.el")))
-
-
+;;(if (file-exists-p (concat emacsrootpath ".emacs.d/php-completion.el"))
+;;    (load-file (concat emacsrootpath ".emacs.d/php-completion.el")))
 
 (if (file-exists-p (concat emacsrootpath ".emacs.d/findr.el"))
     (load-file (concat emacsrootpath ".emacs.d/findr.el")))
 
 ;;Autoloader !!
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/"))
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/arnaud/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
+(add-to-list 'load-path (concat emacsrootpath "/colortheme/color-theme/"))
 
 (require 'auto-complete-config)
+(require 'php-mode)
 (require 'flymake-php)
+(require 'arnaud)
+(require 'my-color-themes)
+(require 'load-theme-buffer-local)
+(require 'color-theme-buffer-local)
+
+
 (add-to-list 'ac-dictionary-directories (concat emacsrootpath ".emacs.d//ac-dict"))
 (ac-config-default)
 
@@ -74,6 +80,8 @@
 
 
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+
+(add-hook 'find-file-hook 'arnaud-hook-find-file)
 
 
 ;; scroll on  mouse wheel
@@ -96,9 +104,9 @@
 ;; Tabs & spaces
 ;; ---------------------------------------------------------------------
 ;; Set tabs to 4 spaces and replace all tabs with spaces
-;;(setq default-tab-width 4)
-;(setq default-tab-width 8) ;; XXX pour conneries de notre ami MrLex
-;(setq-default indent-tabs-mode nil)
+(setq default-tab-width 4)
+(setq default-tab-width 8) ;; XXX pour conneries de notre ami MrLex
+(setq-default indent-tabs-mode nil)
 
 ;; Default browser
 ;; ---------------------------------------------------------------------
@@ -318,20 +326,20 @@
 ;;   (ansi-term "/bin/bash"))))
 ;(global-set-key (kbd "<f2>") 'visit-ansi-term)
 
-
+(global-set-key [f12] 'arnaud-switch-buffer-theme)
 
 
 ;; F11        <=> Masquer le bloc de code courant
 ;; F12        <=> Montrer le bloc de code courant
 ;; Meta + F11 <=> Masquer tous les blocs de code
 ;; Meta + F12 <=> Montrer tous les blocs de code
-(global-set-key [f11] 'hs-hide-block)
-(global-set-key [f12] 'hs-show-block)
-(global-set-key [(meta f11)] 'hs-hide-all)
+;;(global-set-key [f11] 'hs-hide-block)
+;;(global-set-key [f12] 'hs-show-block)
+;;(global-set-key [(meta f11)] 'hs-hide-all)
 ;; FIXME: Pourquoi cette association ne fonctionne-t'elle pas alors
 ;; qu'invoquée explicitement, la commande « hs-show-all » fonctionne
 ;; parfaitement.
-(global-set-key [(meta f12)] 'hs-show-all)
+;;(global-set-key [(meta f12)] 'hs-show-all)
 
 
 
