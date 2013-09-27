@@ -36,6 +36,8 @@
      (if (= (string-match "/ssh" (buffer-file-name)) 0)
          ;;(color-theme-buffer-local 'color-theme-robin-hood (current-buffer))         
          (color-theme-buffer-local 'color-theme-fischmeister (current-buffer))         
+         ;;color-theme-charcoal-black / color-theme-kingsajz / color-theme-calm-forest
+         ;;(color-theme-buffer-local 'color-theme-calm-forest (current-buffer))         
      )
  ) 
 )

@@ -10,8 +10,6 @@
 ;; blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
 (defvar themecolor "blueor")
 
-
-
 ;; hide that tucking foolbar
 (tool-bar-mode -1)
 
@@ -57,6 +55,8 @@
 
 (require 'auto-complete-config)
 (require 'php-mode)
+(require 'web-mode)
+(require 'smarty-mode)
 (require 'flymake-php)
 (require 'arnaud)
 (require 'my-color-themes)
