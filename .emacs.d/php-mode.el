@@ -1101,16 +1101,24 @@ current `tags-file-name'."
  ;;define c-style (c-set-style) PHP mode is built on top of c mode, so it inherits its customizations.
  (setq c-default-style "bsd")
 
- (defun wicked/php-mode-init ()
-   "Set some buffer-local variables."
-   (setq case-fold-search t) 
-   (setq indent-tabs-mode nil)
-   (setq fill-column 78)
-   (setq c-basic-offset 2)
-   (c-set-offset 'arglist-cont 0)
-   (c-set-offset 'arglist-intro '+)
-   (c-set-offset 'case-label 2)
-   (c-set-offset 'arglist-close 0))
+  (defun wicked/php-mode-init ()
+    ;"Set some buffer-local variables."
+    (setq case-fold-search t) 
+    (setq indent-tabs-mode nil)
+    (setq fill-column 78)
+    (c-set-offset 'arglist-cont 0)
+    (c-set-offset 'arglist-intro '+)
+    (c-set-offset 'arglist-close 0)
+    ;;Drupal coding style
+    (setq c-basic-offset 2)
+    (c-set-offset 'case-label 2)
+    ;;PEAR coding style
+    ;;(setq c-basic-offset 4)
+    ;;(c-set-offset 'case-label 4)      
+
+  )
+
+
  (add-hook 'php-mode-hook 'wicked/php-mode-init)
 
 

@@ -8,7 +8,10 @@
 (defvar emacsrootpath "~/emacsconfig/")
 
 ;; blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
-(defvar themecolor "blueor")
+;;(defvar themecolor "blueor")
+;;(defvar themecolor "zenburn_w")
+(setq molokai-theme-kit t)
+(defvar themecolor "molokai")
 
 ;; hide that tucking foolbar
 (tool-bar-mode -1)
@@ -32,6 +35,8 @@
 
 (global-set-key '[C-i] 'indent-region)
 
+(global-set-key "\C-\M-i" 'php_beautifier)
+
 ;;INDENT
 ;;(if (file-exists-p "~/.emacs.d/arnaud/.emacs-indent")
 ;;    (load-file "~/.emacs.d/arnaud/.emacs-indent"))
@@ -52,6 +57,8 @@
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/arnaud/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
 (add-to-list 'load-path (concat emacsrootpath "/colortheme/color-theme/"))
+
+;;(add-to-list 'custom-theme-load-path (concat emacsrootpath "/colortheme/themes/"))
 
 (require 'auto-complete-config)
 (require 'php-mode)
@@ -377,7 +384,7 @@
       ("\\.[sx]?html?\\'" . nxml-mode)
       ("\\.tpl\\'" . nxml-mode)
       ("\\.php\\'" . php-mode)
-      ("\\.module\\'" . drupal-mode)
+      ("\\.module\\'" . php-mode)
       ("\\.inc\\'" . php-mode)
       ("\\.awk\\'" . awk-mode)
       ("\\.tex\\'" . latex-mode)
