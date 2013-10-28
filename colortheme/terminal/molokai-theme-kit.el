@@ -76,16 +76,25 @@
                                                   'face 'font-lock-type-face
                                                   'help-echo "Buffer is read-only"))))
                "] "
+               ;" 【ツ】 "
+               ;" ᕙ(`▽´)ᕗ "
+               ;"┌∩┐(◣_◢)┌∩┐"
+               ;"¯\_(ツ)_/¯"
+               ;"┌∩┐(ツ)┌∩┐"
+               ;" |  " (propertize "┌∩┐(◣_◢)┌∩┐" 'face 'font-lock-keyword-face) " |  "
+               " |    " (propertize "┌∩┐" 'face 'font-lock-warning-face) (propertize "(◣_◢)" 'face 'font-lock-keyword-face) (propertize "┌∩┐" 'face 'font-lock-warning-face) "    | "
 
                ;; add the time, with the date and the emacs uptime in the tooltip
                '(:eval (propertize (format-time-string "%H:%M")
                                    'help-echo
                                    (concat (format-time-string "%c; ")
                                            (emacs-uptime "Uptime:%hh"))))
-               " --"
+
+               "  |  "
+               ;" --"
                ;; i don't want to see minor-modes; but if you want, uncomment this:
                ;; minor-mode-alist  ;; list of minor modes
-               "%-" ;; fill with '-'
+               ;"%-" ;; fill with '-'
                ))
 
 (provide 'molokai-theme-kit)

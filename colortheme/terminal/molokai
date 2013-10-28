@@ -10,7 +10,7 @@
 ;; colors
 ;; ---------------------------------------------------------------------
 
-
+(set-foreground-color "white")
 (scroll-bar-mode 0 )
 
 ;; un peu de couleur :)
@@ -27,7 +27,7 @@
 
 (custom-set-faces
   '(default ((t (:slant normal :weight normal :height 105 :width normal))))
-  '(vertical-border ((nil (:foreground "white"))))
+  '(vertical-border ((nil (:foreground "yellow"))))
 )
 
 
@@ -45,6 +45,7 @@
       (molokai-orange         "#fd971f")
       (molokai-yellow         "#ffff00")
       (molokai-darkgoldenrod  "#e6db74")
+      ;(molokai-darkgoldenrod  "#CCCC00")
       (molokai-wheat          "#c4be89")
       (molokai-olive          "#808000")
       (molokai-chartreuse     "#a6e22e")
@@ -69,8 +70,8 @@
       (molokai-grey+10        "#080808")
       (molokai-dark           "#000000")
       (molokai-base01         "#465457")
-      (molokai-base02         "#455354")
-      (molokai-base03         "#293739")
+      (molokai-base02         "#090909")
+      (molokai-base03         "#353535")
       (molokai-dodgerblue     "#13354a"))
   (custom-theme-set-faces
    'molokai
@@ -83,6 +84,8 @@
    `(region ((t (:background  ,molokai-grey+2))
              (t :inverse-video t)))
    `(warning ((t (:foreground ,molokai-palevioletred :weight bold))))
+
+   '(minibuffer-prompt ((t (:foreground "yellow"))))
 
    ;; font lock
    `(font-lock-builtin-face ((t (:foreground ,molokai-chartreuse))))
