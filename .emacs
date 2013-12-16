@@ -11,6 +11,7 @@
 ;;(defvar themecolor "blueor")
 ;;(defvar themecolor "zenburn_w")
 (setq molokai-theme-kit t)
+
 (defvar themecolor "molokai")
 
 ;; hide that tucking foolbar
@@ -25,6 +26,18 @@
 ;; (autoload 'tail-phperror-file
 ;;       "tail-file" "/tmp/php_arnaud.log" t)
 
+(defun random-element (list)
+  "Return some element of the list, chosen at random."
+  (nth (random (length list)) list))
+
+(defun testt()
+  (interactive)
+
+
+  (setf gg (random-element (ttt)))
+  ;;(message (pop gg))
+)
+;;(pop x)
 
 ;; keys
 ;; ---------------------------------------------------------------------
@@ -58,6 +71,15 @@
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
 (add-to-list 'load-path (concat emacsrootpath "/colortheme/color-theme/"))
 
+
+
+;;(require 'powerline)
+;;;; colors...
+;;(setq powerline-color1 "#222")      ;; dark grey; 
+;;(setq powerline-color2 "#444")      ;; slightly lighter grey
+;;;; shape...
+;;(setq powerline-arrow-shape 'arrow14)
+
 ;;(add-to-list 'custom-theme-load-path (concat emacsrootpath "/colortheme/themes/"))
 
 (require 'auto-complete-config)
@@ -69,6 +91,10 @@
 (require 'my-color-themes)
 (require 'load-theme-buffer-local)
 (require 'color-theme-buffer-local)
+
+
+
+;; //////
 
 
 (add-to-list 'ac-dictionary-directories (concat emacsrootpath ".emacs.d//ac-dict"))
@@ -394,3 +420,13 @@
 )
 
 ;;  (add-to-list 'auto-mode-alist '("\\.info" . conf-windows-mode))
+
+;;Highlight indentation
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "#333333")
+(set-face-background 'highlight-indentation-current-column-face "#444444")
+
+(add-hook 'find-file-hook 'highlight-indentation-mode)
+
+;;(highlight-indentation-current-column-mode t)
+;;(add-hook 'php-mode-hook 'highlight-indentation-mode)
