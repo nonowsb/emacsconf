@@ -40,6 +40,14 @@
 )
 ;;(pop x)
 
+
+
+;; -------------------  yas -----------------------
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/yasnippet/"))
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas--initialize)
+
+
 ;; keys
 ;; ---------------------------------------------------------------------
 (global-unset-key "\C-x\C-k") ;; kill that freaking edit-keyboard-macro
@@ -71,8 +79,9 @@
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/arnaud/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
 (add-to-list 'load-path (concat emacsrootpath "/colortheme/color-theme/"))
-
-
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/python-mode.el/"))
+;;Django
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/django-mode-master"))
 
 ;;(require 'powerline)
 ;;;; colors...
@@ -87,12 +96,18 @@
 (require 'php-mode)
 (require 'web-mode)
 (require 'smarty-mode)
+(require 'python-mode)
 (require 'flymake-php)
 (require 'arnaud)
 (require 'my-color-themes)
 (require 'load-theme-buffer-local)
 (require 'color-theme-buffer-local)
-
+(require 'markdown-mode)
+;;django
+(require 'django-html-mode)
+(require 'django-mode)
+(yas/load-directory (concat emacsrootpath ".emacs.d/django-mode-master/snippets"))
+;;(add-to-list 'auto-mode-alist '("\\.djhtml$" . django-html-mode))
 
 
 ;; //////
@@ -114,6 +129,10 @@
 
 
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+
+;;git blame
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 (add-hook 'find-file-hook 'arnaud-hook-find-file)
 
@@ -167,6 +186,10 @@
 ;; ---------------------------------------------------------------------
 ;(require 'tramp)
 
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; css mode
 ;; ---------------------------------------------------------------------
@@ -187,16 +210,14 @@
 ;; CUSTOMIZE - DONT EDIT PAST THIS POINT
 ;; ---------------------------------------------------------------------
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(auto-compression-mode t nil (jka-compr))
  '(auto-save-default nil)
- ;;;'(blink-cursor-mode nil)
  '(c-basic-offset 2)
  '(c-offsets-alist (quote ((arglist-intro . +) (arglist-cont c-lineup-gcc-asm-reg 0) (arglist-close . +))))
- ;;'(c-tab-always-indent t)
  '(case-fold-search t)
  '(column-number-mode t)
  '(current-language-environment "utf-8")
@@ -205,12 +226,6 @@
  '(font-lock-verbose nil)
  '(frame-background-mode (quote light))
  '(global-font-lock-mode t nil (font-lock))
- ;;'(global-semantic-idle-scheduler-mode nil nil (semantic-idle))
- ;;'(global-semantic-show-dirty-mode nil nil (semantic-util-modes))
- ;;'(global-semantic-show-unmatched-syntax-mode nil nil (semantic-util-modes))
- ;;'(global-semantic-stickyfunc-mode nil nil (semantic-util-modes))
- ;;'(global-semantic-summary-mode t nil (semantic-util-modes))
- ;;'(global-senator-minor-mode t nil (senator))
  '(hippie-expand-verbose t)
  '(mouse-wheel-follow-mouse t)
  '(mouse-wheel-mode t nil (mwheel))
@@ -219,11 +234,10 @@
  '(nxhtml-minor-mode-modes (quote (nxhtml-mode nxml-mode html-mode sgml-mode xml-mode image-mode dired-mode)))
  '(nxhtml-skip-welcome t)
  '(nxml-syntax-highlight-flag t)
- ;;'(pascal-indent-level 2)
  '(password-cache-expiry 3600)
  '(pc-select-meta-moves-sexps t)
  '(pc-select-selection-keys-only t)
- '(pc-selection-mode t nil (pc-select))
+ '(pc-selection-mode t)
  '(php-file-patterns (quote ("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'" "\\.module\\'" "\\.install\\'")))
  '(php-manual-url "http://www.php.net/manual/fr/")
  '(php-mode-force-pear nil)
@@ -232,9 +246,7 @@
  '(py-imenu-show-method-args-p t)
  '(save-place nil nil (saveplace))
  '(scroll-bar-mode (quote right))
- ;;'(semantic-which-function-use-color nil)
- ;;'(semanticdb-default-save-directory "~/.semantic-cache" t)
- ;;'(semanticdb-project-roots nil)
+ '(send-mail-function (quote mailclient-send-it))
  '(show-paren-mode t nil (paren))
  '(speedbar-frame-parameters (quote ((minibuffer) (width . 20) (border-width . 0) (menu-bar-lines . 0) (tool-bar-lines . 0) (unsplittable . t) (set-background-color "black"))))
  '(speedbar-show-unknown-files t)
@@ -272,7 +284,7 @@
 (defun update-diff-colors ()
   "update the colors for diff faces"
   (set-face-attribute 'diff-added nil
-                      :foreground "green")
+                      :foreground "green4")
   (set-face-attribute 'diff-removed nil
                       :foreground "blue")
   (set-face-attribute 'diff-changed nil
@@ -285,6 +297,17 @@
   ;;                    :foreground "white" :background "purple"))
 (eval-after-load "diff-mode"
   '(update-diff-colors))
+
+
+;; (add-hook 'ediff-load-hook
+;;           (lambda ()
+;;             (setq-default ediff-highlight-all-diffs 'nil)
+;;             (set-face-foreground
+;;              ediff-current-diff-face-B "white")
+;;             (set-face-background
+;;              ediff-current-diff-face-B "red")
+;;             (make-face-italic
+;;              ediff-current-diff-face-B)))
 
 
 
@@ -415,6 +438,8 @@
       ("\\.inc\\'" . php-mode)
       ("\\.awk\\'" . awk-mode)
       ("\\.tex\\'" . latex-mode)
+      ("\\.py\\'" . python-mode)
+
      )
      auto-mode-alist
   )
@@ -431,3 +456,9 @@
 
 ;;(highlight-indentation-current-column-mode t)
 ;;(add-hook 'php-mode-hook 'highlight-indentation-mode)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(vertical-border ((nil (:foreground "yellow")))))
