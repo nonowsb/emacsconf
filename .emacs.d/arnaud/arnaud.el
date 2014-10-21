@@ -77,5 +77,13 @@
 )
 
 
+;;Django python headers
+(defun django-headers ()
+  (interactive)
+  (print "# -*- coding:utf-8 -*-" (current-buffer))
+  (print "import logging; logger = logging.getLogger(__name__)" (current-buffer))
+)
+
+
 
 (provide 'arnaud)
