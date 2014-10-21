@@ -124,6 +124,26 @@
    `(hl-line-face ((,class (:background ,molokai-grey+5)) (t :weight bold)))
    `(hl-line ((,class (:background ,molokai-grey+5)) (t :weight bold)))
 
+
+
+   `(ediff-current-diff-A ((((class color) (min-colors 16)) (:background "#F87D00" :foreground "black"))))
+   `(ediff-current-diff-Ancestor ((((class color) (min-colors 16)) (:background "#4D0600" :foreground "white"))))
+   `(ediff-current-diff-B ((((class color) (min-colors 16)) (:background "#73E415" :foreground "black"))))
+   `(ediff-current-diff-C ((((class color) (min-colors 16)) (:background "#5C285C" :foreground "white"))))
+   `(ediff-even-diff-A ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-even-diff-Ancestor ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-even-diff-B ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-even-diff-C ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-fine-diff-A ((((class color) (min-colors 16)) (:background "#FFDD17" :foreground "blue"))))
+   `(ediff-fine-diff-Ancestor ((((class color) (min-colors 16)) (:background "#FFDD17" :foreground "blue"))))
+   `(ediff-fine-diff-B ((((class color) (min-colors 16)) (:background "#FFDD17" :foreground "blue"))))
+   `(ediff-fine-diff-C ((((class color) (min-colors 16)) (:background "#D4A822" :foreground "black"))))
+   `(ediff-odd-diff-A ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-odd-diff-Ancestor ((((class color) (min-colors 16)) (:background "#083852"))))
+   `(ediff-odd-diff-B ((((class color) (min-colors 16)) (:background "#083852"))))
+
+
+
    ;; TODO
    ;; ido-mode
    ;; flycheck
@@ -131,6 +151,7 @@
    ;; rainbow-delimiters
    ;; highlight-symbols
    ))
+
 
 (defcustom molokai-theme-kit nil
   "Non-nil means load molokai-theme-kit UI component"
