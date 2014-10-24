@@ -6,12 +6,14 @@
 
 (defvar emacsrootpath "~/emacsconfig-dev/")
 
-(setq themes '(molokai ))
-;; blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
-;;(defvar themecolor "blueor")
-;;(defvar themecolor "zenburn_w")
-(add-to-list 'custom-theme-load-path (concat emacsrootpath (concat "themes/" "molokai")))
-
+;;Define theme / u can edit this
+(setq theme 'molokai)
 (setq molokai-theme-kit t)
-(load-theme 'molokai t)
+
+;; @TODO: include themes : blueor | whitest | whitest_2 | storm | matrix | desert | grayze 
+
+;;load theme
+(add-to-list 'custom-theme-load-path (concat emacsrootpath (concat "themes/" (format "%s" theme))))
+(load-theme theme t)
+
 
