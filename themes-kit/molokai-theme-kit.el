@@ -1,5 +1,3 @@
-;;; molokai-theme-kit.el
-
 ;; Copyright (C) 2013 Huang Bin
 
 ;; Author: Huang Bin <embrace.hbin@gmail.com>

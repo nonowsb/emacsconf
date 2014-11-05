@@ -152,7 +152,6 @@
    ;; highlight-symbols
    ))
 
-
 (defcustom molokai-theme-kit nil
   "Non-nil means load molokai-theme-kit UI component"
   :type 'boolean
@@ -170,13 +169,13 @@
          (file-exists-p molokai-theme-kit-file))
     (load-file molokai-theme-kit-file))
 
-(load-file molokai-theme-kit-file)
-
 ;;;###autoload
 (and load-file-name
      (boundp 'custom-theme-load-path)
      (add-to-list 'custom-theme-load-path
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
+
+
 
 (provide-theme 'molokai)
