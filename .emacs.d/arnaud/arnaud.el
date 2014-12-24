@@ -85,5 +85,13 @@
 )
 
 
+(defun arnaud-cua-mode ()
+  (interactive)
+  (setq cua-enable-cua-keys nil)
+  (cua-mode t)
+  (message "cua-mode activated. Do 'M-x cua-mode' to deactivate")
+)
+
+
 
 (provide 'arnaud)
