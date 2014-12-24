@@ -44,7 +44,7 @@
 (setq-default mode-line-format
               (list
                ;; the buffer name; the file name as a tool tip
-               '(:eval (propertize "%b " 'face 'font-lock-keyword-face 'help-echo (buffer-file-name)))
+               '(:eval (propertize "%b" 'face 'font-lock-keyword-face 'help-echo (buffer-file-name)))
 
                ;; line and column
                "(" (propertize "%l" 'face 'font-lock-type-face) "," (propertize "%c" 'face 'font-lock-type-face) ") "
@@ -52,8 +52,12 @@
                ;; relative position, size of file
                "[" (propertize "%p" 'face 'font-lock-constant-face) "/" (propertize "%I" 'face 'font-lock-constant-face) "] "
 
-               ;; the current major mode for the buffer.
-               "[" '(:eval (propertize "%m" 'face 'font-lock-string-face 'help-echo buffer-file-coding-system)) "] "
+               ;; add the time, with the date and the emacs uptime in the tooltip
+	       '(:eval (propertize " %Z " 'face 'font-lock-string-face
+              'help-echo buffer-file-coding-system))
+	       '(:eval (propertize (symbol-name buffer-file-coding-system )))
+
+               "  |  "
 
 
                "[" ;; insert vs overwrite mode, input-method in a tooltip
@@ -74,6 +78,12 @@
                                                   'face 'font-lock-type-face
                                                   'help-echo "Buffer is read-only"))))
                "] "
+
+
+               ;; the current major mode for the buffer.
+               "[" '(:eval (propertize "%m" 'face 'font-lock-string-face 'help-echo buffer-file-coding-system)) "] "
+
+
                ;" 【ツ】 "
                ;" ᕙ(`▽´)ᕗ "
                ;"┌∩┐(◣_◢)┌∩┐"
@@ -93,6 +103,7 @@
                ;; i don't want to see minor-modes; but if you want, uncomment this:
                ;; minor-mode-alist  ;; list of minor modes
                ;"%-" ;; fill with '-'
+
                ))
 
 (provide 'molokai-theme-kit)
