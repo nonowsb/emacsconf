@@ -78,6 +78,7 @@
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/arnaud/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake"))
+(add-to-list 'load-path (concat emacsrootpath ".emacs.d/flymake-phpcs"))
 (add-to-list 'load-path (concat emacsrootpath "/colortheme/color-theme/"))
 (add-to-list 'load-path (concat emacsrootpath ".emacs.d/python-mode.el/"))
 ;;Django
@@ -98,6 +99,7 @@
 (require 'smarty-mode)
 (require 'python-mode)
 (require 'flymake-php)
+(require 'flymake-phpcs) ;;code sniffer
 (require 'arnaud)
 (require 'my-color-themes)
 (require 'load-theme-buffer-local)
